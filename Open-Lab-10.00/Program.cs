@@ -49,31 +49,11 @@ namespace Open_Lab_10._00
              Console.WriteLine(LOTR3.ToString());
             */
 
-            List<string> gerne = new List<string>();
-            
-            gerne.Add("detské");
-            gerne.Add("romantické");
-            gerne.Add("náučné");
-            gerne.Add("sci-fi");
-            gerne.Add("dobrodružné");
-
-            Book.CategoryList = gerne;
-
             string category = Book.ChooseAGenre();
 
             Book HOBIT = new Book("Hobit", 232,category, "J.R.R. Tolkien", 2012);
             HOBIT.DiscribeBook();
         }
-
-
-
-
-
-
-            
-            
-        
-
     }
     class Book
     {
@@ -82,7 +62,7 @@ namespace Open_Lab_10._00
         public string Category { private get; set; }
         public string Author { get; set; }
         public int ReleaseDate { get; set; }
-        public static List<string> CategoryList { get; set; }
+        public static List<string> CategoryList = new List<string>() { "detské", "romantické", "náučné", "sci-fi", "dobrodružné" };
 
         public Book(string title, int pages, string categoty, string author, int releasedate)
         {
@@ -91,7 +71,7 @@ namespace Open_Lab_10._00
             Category = categoty;
             Author = author;
             ReleaseDate = releasedate;
-            CategoryList = new List<string>();
+            
         }
         
         public Book()
@@ -134,6 +114,8 @@ namespace Open_Lab_10._00
             string category = Book.CategoryList[int.Parse(Console.ReadLine())-1];
             return category;
         }
+    }
+}
         
 
            
@@ -150,5 +132,17 @@ namespace Open_Lab_10._00
 
 
 
-    }
-}
+            
+
+            
+
+
+
+
+
+
+
+            
+            
+        
+
